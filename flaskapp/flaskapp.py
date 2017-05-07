@@ -18,8 +18,8 @@ app.config.update(dict(
     MAIL_PORT=587,
     MAIL_USE_TLS=True,
     MAIL_USE_SSL=False,
-    MAIL_USERNAME='my_username@gmail.com',  # tbc
-    MAIL_PASSWORD='my_password'  # tbc
+    MAIL_USERNAME='username@gmail.com',  # tbc
+    MAIL_PASSWORD='password'  # tbc
 ))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 

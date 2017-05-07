@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulletin board</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <script type=text/javascript src="{{ url_for('static', filename='jquery-3.2.1.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='jquery.validate.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='flash-script.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='form-validation.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='search-script.js') }}"></script>
+</head>
+<body>
+<div class=frame>
+    <h1>Bulletin board</h1>
+
+    {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+    {% endfor %}
+    {% block body %}{% endblock %}
+</div>
+</body>
+</html>

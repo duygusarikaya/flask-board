@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class=form-nav>
+    <a href="{{ url_for('add_entry') }}"><img src="/static/add.png" alt="add entry" style="width:42px;height:42px;border:0;"></a>
+    <a href="{{ url_for('contact_us') }}"><img src="/static/contact.png" alt="contact us" style="width:42px;height:42px;border:0;"></a>
+</div>
+
+<div class=search>
+    <input type="text" placeholder="Start typing to search..." id="search_input" name="search"/>
+</div>
+
+<ul class=entries id="entries">
+    {% for entry in entries %}
+    <li><h2>{{ entry.title }}</h2>{{ entry.text|safe }}
+        {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+        {% endfor %}
+</ul>
+{% endblock %}
